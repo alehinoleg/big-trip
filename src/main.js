@@ -19,12 +19,16 @@ const eventNewComponent = new EventNew();
 const tripFiltersPresenter = new Presenter({ container: tripControlsElement, component: tripFiltersComponent });
 const tripSortPresenter = new Presenter({ container: tripEventsElement, component: tripSortComponent });
 const tripEventsPresenter = new Presenter({ container: tripEventsElement, component: tripEventsComponent });
-const eventEditPresenter = new Presenter({ container: tripEventsElement, component: eventEditComponent });
-const eventNewPresenter = new Presenter({container: tripEventsElement, component: eventNewComponent});
-
 
 tripFiltersPresenter.init();
 tripSortPresenter.init();
 tripEventsPresenter.init();
+
+const tripEventsList = tripEventsComponent.getElement();
+
+const eventEditPresenter = new Presenter({ container: tripEventsList, component: eventEditComponent });
+const eventNewPresenter = new Presenter({container: tripEventsList, component: eventNewComponent});
+
+
 eventEditPresenter.init();
 eventNewPresenter.init();
